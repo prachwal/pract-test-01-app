@@ -1,0 +1,11 @@
+// Light theme overrides (explicit)
+
+:root[data-theme='light'] {
+  --color-primary: #646cff;
+  --color-primary-hover: #747bff;
+  --color-text: #213547;
+  --color-bg: #ffffff;
+  --color-bg-1: #f9f9f9;
+  --color-muted: #888;
+  --color-border: rgba(33,53,71,0.06);
+}

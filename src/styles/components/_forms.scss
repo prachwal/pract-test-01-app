@@ -1,0 +1,55 @@
+// Forms styles - inputs, labels, selects, textareas
+
+// =====================================
+// Form Layout & Structure
+// =====================================
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--spacing-md, 16px);
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+// =====================================
+// Form Controls
+// =====================================
+
+.input, input, textarea, select {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, rgba(0,0,0,0.08));
+  background: var(--color-bg, #fff);
+  color: var(--color-text);
+  font-size: var(--font-size-base, 16px);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 12%, transparent);
+  border-color: var(--color-primary);
+}
+
+// =====================================
+// Form States & Validation
+// =====================================
+
+.input--error {
+  border-color: #e86c6c;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px color-mix(in srgb, #e86c6c 20%, transparent);
+    border-color: #e86c6c;
+  }
+}
+
+.form-help {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}

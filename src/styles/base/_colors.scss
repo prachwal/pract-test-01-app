@@ -1,0 +1,78 @@
+// Color system - semantic tokens and theme-aware CSS variables
+// Organized by semantic meaning for consistent usage across components
+
+// =====================================
+// Colors - Semantic Tokens
+// =====================================
+
+// Sass fallback values (maintained for consistency)
+$color-primary: #646cff;
+$color-primary-hover: #747bff;
+$color-text: #213547;
+$color-bg: #ffffff;
+$color-bg-dark: #242424;
+$color-muted: #888;
+
+// =====================================
+// Root Variables - Default Theme
+// =====================================
+
+// Semantic CSS variables (default / light theme)
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-text: #{$color-text};
+  --color-bg: #{$color-bg};
+  --color-bg-1: #f9f9f9;
+  --color-muted: #{$color-muted};
+  --color-border: rgba(0,0,0,0.08);
+}
+
+// =====================================
+// Dark Theme Overrides
+// =====================================
+
+// Dark theme overrides via data-theme attribute
+:root[data-theme='dark'] {
+  --color-primary: #535bf2;     // Unified value
+  --color-primary-hover: #4546d8; // Unified value
+  --color-text: rgba(255,255,255,0.87);
+  --color-bg: #{$color-bg-dark};
+  --color-bg-1: #1a1a1a;
+  --color-muted: #b3b3b3;
+  --color-border: rgba(255,255,255,0.06);
+}
+
+// System preference fallback (only when no explicit theme is set)
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-primary: #535bf2;     // Unified with data-theme
+    --color-primary-hover: #4546d8; // Unified with data-theme
+    --color-text: rgba(255,255,255,0.87);
+    --color-bg: #{$color-bg-dark};
+    --color-bg-1: #1a1a1a;
+    --color-muted: #b3b3b3;
+    --color-border: rgba(255,255,255,0.06);
+  }
+}
+
+// =====================================
+// Utility Classes - Background
+// =====================================
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-hover:hover {
+  background-color: var(--color-primary-hover);
+}
+
+// =====================================
+// Utility Classes - Text & Borders
+// =====================================
+
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-muted); }
+.bg-surface { background-color: var(--color-bg-1); }
+.border { border: 1px solid var(--color-border); }

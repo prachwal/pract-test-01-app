@@ -1,0 +1,130 @@
+// Grid utilities - comprehensive CSS Grid layout classes
+// Semantic and responsive grid utilities
+
+// =====================================
+// Grid Template Columns
+// =====================================
+
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+.grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+.grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+.grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+
+// =====================================
+// Grid Column Start / End
+// =====================================
+
+.col-start-1 { grid-column-start: 1 !important; }
+.col-start-2 { grid-column-start: 2 !important; }
+.col-start-3 { grid-column-start: 3 !important; }
+.col-start-4 { grid-column-start: 4 !important; }
+.col-start-5 { grid-column-start: 5 !important; }
+.col-start-6 { grid-column-start: 6 !important; }
+
+.col-end-1 { grid-column-end: 1 !important; }
+.col-end-2 { grid-column-end: 2 !important; }
+.col-end-3 { grid-column-end: 3 !important; }
+.col-end-4 { grid-column-end: 4 !important; }
+.col-end-5 { grid-column-end: 5 !important; }
+.col-end-6 { grid-column-end: 6 !important; }
+.col-end-7 { grid-column-end: 7 !important; }
+
+// =====================================
+// Grid Row Start / End
+// =====================================
+
+.row-start-1 { grid-row-start: 1 !important; }
+.row-start-2 { grid-row-start: 2 !important; }
+.row-start-3 { grid-row-start: 3 !important; }
+
+.row-end-1 { grid-row-end: 1 !important; }
+.row-end-2 { grid-row-end: 2 !important; }
+.row-end-3 { grid-row-end: 3 !important; }
+.row-end-4 { grid-row-end: 4 !important; }
+
+// =====================================
+// Grid Column & Row Span
+// =====================================
+
+.col-span-1 { grid-column: span 1 / span 1 !important; }
+.col-span-2 { grid-column: span 2 / span 2 !important; }
+.col-span-3 { grid-column: span 3 / span 3 !important; }
+.col-span-4 { grid-column: span 4 / span 4 !important; }
+.col-span-5 { grid-column: span 5 / span 5 !important; }
+.col-span-6 { grid-column: span 6 / span 6 !important; }
+.col-span-full { grid-column: 1 / -1 !important; }
+
+.row-span-1 { grid-row: span 1 / span 1 !important; }
+.row-span-2 { grid-row: span 2 / span 2 !important; }
+.row-span-3 { grid-row: span 3 / span 3 !important; }
+.row-span-full { grid-row: 1 / -1 !important; }
+
+// =====================================
+// Grid Justify Items
+// =====================================
+
+.justify-items-start { justify-items: start !important; }
+.justify-items-end { justify-items: end !important; }
+.justify-items-center { justify-items: center !important; }
+.justify-items-stretch { justify-items: stretch !important; }
+
+// =====================================
+// Grid Align Items
+// =====================================
+
+.items-start { align-items: start !important; }
+.items-end { align-items: end !important; }
+.items-center { align-items: center !important; }
+.items-stretch { align-items: stretch !important; }
+
+// =====================================
+// Grid Justify Content
+// =====================================
+
+.justify-content-start { justify-content: start !important; }
+.justify-content-end { justify-content: end !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-around { justify-content: space-around !important; }
+.justify-content-evenly { justify-content: space-evenly !important; }
+
+// =====================================
+// Grid Align Content
+// =====================================
+
+.content-start { align-content: start !important; }
+.content-end { align-content: end !important; }
+.content-center { align-content: center !important; }
+.content-between { align-content: space-between !important; }
+.content-around { align-content: space-around !important; }
+.content-evenly { align-content: space-evenly !important; }
+
+// =====================================
+// Responsive Grid Utilities
+// =====================================
+
+@media (min-width: 768px) {
+  .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .md\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .md\\:col-span-2 { grid-column: span 2 / span 2 !important; }
+  .md\\:col-span-3 { grid-column: span 3 / span 3 !important; }
+}
+
+@media (min-width: 1024px) {
+  .lg\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .lg\\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .lg\\:col-span-2 { grid-column: span 2 / span 2 !important; }
+  .lg\\:col-span-3 { grid-column: span 3 / span 3 !important; }
+  .lg\\:col-span-4 { grid-column: span 4 / span 4 !important; }
+}
+
+@media (min-width: 1280px) {
+  .xl\\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .xl\\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .xl\\:col-span-4 { grid-column: span 4 / span 4 !important; }
+  .xl\\:col-span-6 { grid-column: span 6 / span 6 !important; }
+}

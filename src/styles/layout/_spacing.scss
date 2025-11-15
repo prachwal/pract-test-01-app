@@ -1,0 +1,17 @@
+// Centralized spacing utilities and CSS variable usage
+
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+.spacing-sm { padding: var(--spacing-sm); }
+.spacing-md { padding: var(--spacing-md); }
+.spacing-lg { padding: var(--spacing-lg); }
+
+.u-gap-sm { gap: var(--spacing-sm); }
+.u-gap-md { gap: var(--spacing-md); }
+.u-gap-lg { gap: var(--spacing-lg); }

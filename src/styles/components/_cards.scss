@@ -1,0 +1,65 @@
+// Card components - flexible container elements
+// Interactive cards support hover effects and visual feedback
+
+// =====================================
+// Card Base Styles
+// =====================================
+
+.card {
+  background: var(--color-bg-1, #fff);
+  border-radius: 12px;
+  padding: var(--spacing-lg, 24px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border: 1px solid var(--color-border, rgba(0,0,0,0.06));
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+// =====================================
+// Card Modifiers
+// =====================================
+
+// Enhanced padding variant
+.card--padded {
+  padding: calc(var(--spacing-lg, 24px) * 1.25);
+}
+
+// Elevated effect with subtle shadow
+.card--elevated {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+// Interactive variant with enhanced hover effects
+.card--interactive {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+  
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    outline-offset: 2px;
+  }
+}
+
+// =====================================
+// Card Sub-components
+// =====================================
+
+.card__title {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.card__body {
+  color: var(--color-text);
+  font-size: var(--font-size-base, 16px);
+}

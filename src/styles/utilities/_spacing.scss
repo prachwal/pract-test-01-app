@@ -1,0 +1,108 @@
+// Utility spacing classes - margin/padding helpers
+// Semantic spacing using CSS custom properties
+
+// =====================================
+// Spacing Helpers - Core Margins
+// =====================================
+
+/* Margin helpers */
+.m-0 { margin: 0 !important; }
+.m-auto { margin: auto !important; }
+
+/* Margin top */
+.mt-1 { margin-top: var(--spacing-xs) !important; }
+.mt-2 { margin-top: var(--spacing-sm) !important; }
+.mt-3 { margin-top: var(--spacing-md) !important; }
+.mt-4 { margin-top: var(--spacing-lg) !important; }
+.mt-5 { margin-top: var(--spacing-xl) !important; }
+
+/* Margin bottom */
+.mb-1 { margin-bottom: var(--spacing-xs) !important; }
+.mb-2 { margin-bottom: var(--spacing-sm) !important; }
+.mb-3 { margin-bottom: var(--spacing-md) !important; }
+.mb-4 { margin-bottom: var(--spacing-lg) !important; }
+.mb-5 { margin-bottom: var(--spacing-xl) !important; }
+
+/* Margin left/right */
+.ml-auto { margin-left: auto !important; }
+.mr-auto { margin-right: auto !important; }
+
+// =====================================
+// Spacing Helpers - Core Padding
+// =====================================
+
+/* Padding helpers */
+.p-0 { padding: 0 !important; }
+.p-1 { padding: var(--spacing-xs) !important; }
+.p-2 { padding: var(--spacing-sm) !important; }
+.p-3 { padding: var(--spacing-md) !important; }
+.p-4 { padding: var(--spacing-lg) !important; }
+.p-5 { padding: var(--spacing-xl) !important; }
+
+/* Horizontal padding */
+.px-1 { padding-left: var(--spacing-xs) !important; padding-right: var(--spacing-xs) !important; }
+.px-2 { padding-left: var(--spacing-sm) !important; padding-right: var(--spacing-sm) !important; }
+.px-3 { padding-left: var(--spacing-md) !important; padding-right: var(--spacing-md) !important; }
+.px-4 { padding-left: var(--spacing-lg) !important; padding-right: var(--spacing-lg) !important; }
+.px-5 { padding-left: var(--spacing-xl) !important; padding-right: var(--spacing-xl) !important; }
+
+/* Vertical padding */
+.py-1 { padding-top: var(--spacing-xs) !important; padding-bottom: var(--spacing-xs) !important; }
+.py-2 { padding-top: var(--spacing-sm) !important; padding-bottom: var(--spacing-sm) !important; }
+.py-3 { padding-top: var(--spacing-md) !important; padding-bottom: var(--spacing-md) !important; }
+.py-4 { padding-top: var(--spacing-lg) !important; padding-bottom: var(--spacing-lg) !important; }
+.py-5 { padding-top: var(--spacing-xl) !important; padding-bottom: var(--spacing-xl) !important; }
+
+// =====================================
+// Gap Utilities - Flex/Grid
+// =====================================
+
+/* Gap utilities for flex/grid */
+.gap-1 { gap: var(--spacing-xs) !important; }
+.gap-2 { gap: var(--spacing-sm) !important; }
+.gap-3 { gap: var(--spacing-md) !important; }
+.gap-4 { gap: var(--spacing-lg) !important; }
+.gap-5 { gap: var(--spacing-xl) !important; }
+
+// =====================================
+// Responsive Spacing - Medium (768px+)
+// =====================================
+
+@media (min-width: 768px) {
+  .md\\:mt-4 { margin-top: var(--spacing-lg) !important; }
+  .md\\:mb-4 { margin-bottom: var(--spacing-lg) !important; }
+  .md\\:p-4 { padding: var(--spacing-lg) !important; }
+  .md\\:px-4 { 
+    padding-left: var(--spacing-lg) !important; 
+    padding-right: var(--spacing-lg) !important; 
+  }
+}
+
+// =====================================
+// Responsive Spacing - Large (1024px+)
+// =====================================
+
+@media (min-width: 1024px) {
+  .lg\\:mt-5 { margin-top: var(--spacing-xl) !important; }
+  .lg\\:mb-5 { margin-bottom: var(--spacing-xl) !important; }
+  .lg\\:p-5 { padding: var(--spacing-xl) !important; }
+  .lg\\:px-5 { 
+    padding-left: var(--spacing-xl) !important; 
+    padding-right: var(--spacing-xl) !important; 
+  }
+}
+
+// =====================================
+// Responsive Spacing - Extra Large (1280px+)
+// =====================================
+
+@media (min-width: 1280px) {
+  .xl\\:mt-6 { margin-top: calc(var(--spacing-xl) * 1.5) !important; }
+  .xl\\:mb-6 { margin-bottom: calc(var(--spacing-xl) * 1.5) !important; }
+  .xl\\:p-6 { padding: calc(var(--spacing-xl) * 1.5) !important; }
+  .xl\\:px-6 { 
+    padding-left: calc(var(--spacing-xl) * 1.5) !important; 
+    padding-right: calc(var(--spacing-xl) * 1.5) !important; 
+  }
+  .xl\\:gap-6 { gap: calc(var(--spacing-xl) * 1.5) !important; }
+}

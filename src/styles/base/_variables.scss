@@ -1,0 +1,31 @@
+// SCSS variables - prefer semantic tokens and CSS variables for runtime theming
+//
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Sizes
+$max-width: 1280px;
+
+// Typography
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-2xl: 32px;
+
+// Export CSS variables for runtime theming
+:root {
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+
+  --max-width: #{$max-width};
+
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-2xl: #{$font-size-2xl};
+}

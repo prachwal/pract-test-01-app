@@ -1,0 +1,11 @@
+// Dark theme overrides
+
+:root[data-theme='dark'] {
+  --color-primary: #535bf2;
+  --color-primary-hover: #4546d8;
+  --color-text: rgba(255,255,255,0.87);
+  --color-bg: #242424;
+  --color-bg-1: #1a1a1a;
+  --color-muted: #b3b3b3;
+  --color-border: rgba(255,255,255,0.06);
+}

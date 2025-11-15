@@ -1,0 +1,57 @@
+/* CSS Reset / Base styles
+   Minimal reset tuned for modern apps (mobile-first) */
+
+/* Box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins */
+html, body, p, h1, h2, h3, h4, h5, h6, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Make images responsive */
+img, picture, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Base page */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-base, 16px);
+  background-color: var(--color-bg, #ffffff);
+  color: var(--color-text, #213547);
+}
+
+/* Links and buttons */
+a { color: var(--color-primary, #646cff); text-decoration: none; }
+button { font-family: inherit; }
+
+/* Utility to visually hide content but keep it accessible */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}

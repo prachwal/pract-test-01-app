@@ -1,0 +1,81 @@
+// =====================================
+// OPTIMIZED SCSS ENTRY POINT
+// Eliminates duplications and improves maintainability
+// =====================================
+
+// 1. Foundation - Variables and Reset (loaded once)
+@use 'base/variables';
+@use 'base/colors'; // Unified theme system
+@use 'base/reset';
+
+// 2. Component System - Modern, semantic components
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+@use 'components/layout';
+
+// 3. Utility System - Organized utilities (can be purged in production)
+@use 'utilities/spacing';
+@use 'utilities/display';
+@use 'utilities/flex';
+@use 'utilities/grid';
+@use 'utilities/typography';
+@use 'utilities/shadows';
+
+// 4. Extended utilities - Enhanced functionality
+@use 'utilities/position';
+
+// 5. Global enhancements
+@use 'globals/transitions';
+@use 'globals/animations';
+@use 'globals/mixins';
+@use 'globals/globals';
+
+// =====================================
+// CORE UTILITY CLASSES (built-in optimization)
+// =====================================
+
+// Layout utilities
+html, body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: var(--color-bg, #fff);
+  color: var(--color-text, #213547);
+}
+
+.container { 
+  max-width: var(--max-width); 
+  margin: 0 auto; 
+  padding: 0 1rem; 
+}
+
+.grid { 
+  display: grid; 
+  gap: var(--spacing-lg); 
+}
+
+.gridAutoFit { 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+}
+
+// Typography utilities
+.heading { 
+  font-size: var(--font-size-2xl); 
+  font-weight: 700; 
+  margin: 0 0 0.5rem 0; 
+}
+
+.subheading { 
+  font-size: var(--font-size-lg); 
+  font-weight: 600; 
+  margin: 0 0 1rem 0; 
+}
+
+// Interactive utilities
+.interactive { 
+  transition: transform 0.2s ease; 
+}
+
+.interactive:hover { 
+  transform: scale(1.03); 
+}

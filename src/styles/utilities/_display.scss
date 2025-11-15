@@ -1,0 +1,71 @@
+/* Display utilities - responsive and accessible
+// Usage: .d-flex, .d-sm-flex, .d-md-grid, etc.
+
+// =====================================
+// Display Utilities - Core
+// =====================================
+
+/* Base display utilities */
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+
+/* Flex utilities */
+.flex-column { flex-direction: column !important; }
+.flex-center { 
+  display: flex !important; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+/* Optimized hide utility - single definition */
+.hide { 
+  display: none !important; 
+}
+
+// =====================================
+// Responsive Display Utilities - Medium (768px+)
+// =====================================
+
+@media (min-width: 768px) {
+  .d-md-block { display: block !important; }
+  .d-md-flex { display: flex !important; }
+  .d-md-grid { display: grid !important; }
+  .md\:flex-center { 
+    display: flex !important; 
+    align-items: center; 
+    justify-content: center; 
+  }
+}
+
+// =====================================
+// Responsive Display Utilities - Large (1024px+)
+// =====================================
+
+@media (min-width: 1024px) {
+  .d-lg-block { display: block !important; }
+  .d-lg-flex { display: flex !important; }
+  .d-lg-grid { display: grid !important; }
+  .lg\:flex-center { 
+    display: flex !important; 
+    align-items: center; 
+    justify-content: center; 
+  }
+}
+
+// =====================================
+// Responsive Display Utilities - Extra Large (1280px+)
+// =====================================
+
+@media (min-width: 1280px) {
+  .d-xl-block { display: block !important; }
+  .d-xl-flex { display: flex !important; }
+  .d-xl-grid { display: grid !important; }
+  .xl\:flex-center { 
+    display: flex !important; 
+    align-items: center; 
+    justify-content: center; 
+  }
+}

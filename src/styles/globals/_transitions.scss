@@ -1,0 +1,8 @@
+// Common transition utilities
+
+.transition-fast { transition: all 120ms ease; }
+.transition-medium { transition: all 240ms ease; }
+.transition-slow { transition: all 420ms ease; }
+
+.scale-hover { transition: transform 180ms ease; }
+.scale-hover:hover { transform: scale(1.03); }

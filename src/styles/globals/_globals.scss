@@ -1,0 +1,84 @@
+// Global utility classes and shared styles
+// Focus on accessibility and performance optimization
+
+// =====================================
+// Accessibility Utilities
+// =====================================
+
+.sr-only { 
+  position: absolute !important; 
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  white-space: nowrap; 
+  border: 0; 
+}
+
+// Enhanced visually hidden utility with !important declarations
+.visually-hidden {
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+}
+
+// =====================================
+// Focus & Interaction States
+// =====================================
+
+// Universal focus styles for keyboard navigation
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+  outline-offset: 2px;
+}
+
+// Interactive focus management for form elements and controls
+button,
+[role="button"],
+a[href],
+input,
+select,
+textarea,
+[tabindex]:not([tabindex="-1"]) {
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    outline-offset: 2px;
+  }
+}
+
+// =====================================
+// Performance-Optimized Utilities
+// =====================================
+
+.fade { 
+  transition: opacity 200ms ease; 
+}
+
+.scale-hover {
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.transition-slow {
+  transition: all 420ms ease;
+}
+
+.pulse {
+  animation: pulse 1200ms ease-in-out infinite;
+}
+
+// Performance-optimized transform hover
+.scale-hover:hover {
+  transform: scale(1.03);
+}
