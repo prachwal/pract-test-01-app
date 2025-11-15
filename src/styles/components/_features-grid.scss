@@ -1,0 +1,39 @@
+.featuresSection {
+  // Container styles handled by global .container
+}
+
+.sectionTitle {
+  // Uses global heading, text-center, mb-5, text-3xl classes
+}
+
+.gridContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gridRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.featureCard {
+  min-height: 160px;
+}
+
+.featureIcon {
+  // Uses global text-4xl, mb-3 classes
+}
+
+.featureTitle {
+  // Uses global card__title, text-xl, font-bold classes
+}
+
+.featureDescription {
+  // Uses global card__body, text-muted, m-0 classes
+}

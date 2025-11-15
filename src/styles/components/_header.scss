@@ -1,0 +1,67 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background-color: var(--color-bg-1);
+}
+
+.hamburger {
+  min-width: auto;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.logoContainer {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.titleContainer {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.themeToggle {
+  min-width: auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}

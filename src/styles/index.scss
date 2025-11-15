@@ -9,10 +9,7 @@
 @use 'base/reset';
 
 // 2. Component System - Modern, semantic components
-@use 'components/buttons';
-@use 'components/cards';
-@use 'components/forms';
-@use 'components/layout';
+@use 'components/index' as components;
 
 // 3. Utility System - Organized utilities (can be purged in production)
 @use 'utilities/spacing';
