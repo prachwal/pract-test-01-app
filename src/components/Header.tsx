@@ -2,9 +2,10 @@ interface HeaderProps {
   theme: string;
   onToggleSidebar: () => void;
   onToggleTheme: () => void;
+  children?: preact.ComponentChildren;
 }
 
-export default function Header({ theme, onToggleSidebar, onToggleTheme }: HeaderProps) {
+export default function Header({ theme, onToggleSidebar, onToggleTheme, children }: HeaderProps) {
   return (
     <header className="header bg-surface border">
       {/* Hamburger Button */}
@@ -37,6 +38,7 @@ export default function Header({ theme, onToggleSidebar, onToggleTheme }: Header
       >
         {theme === 'dark' ? '☀️' : '🌙'}
       </button>
+      {children}
     </header>
   );
 }
