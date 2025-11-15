@@ -1,5 +1,7 @@
+import { Signal } from '@preact/signals';
+
 interface HeaderProps {
-  theme: string;
+  theme: Signal<string>;
   onToggleSidebar: () => void;
   onToggleTheme: () => void;
   children?: preact.ComponentChildren;
@@ -36,7 +38,7 @@ export default function Header({ theme, onToggleSidebar, onToggleTheme, children
         className="button button--outline themeToggle"
         onClick={onToggleTheme}
       >
-        {theme === 'dark' ? '☀️' : '🌙'}
+        {theme.value === 'dark' ? '☀️' : '🌙'}
       </button>
       {children}
     </header>

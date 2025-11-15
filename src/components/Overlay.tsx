@@ -1,10 +1,12 @@
+import { Signal } from '@preact/signals';
+
 interface OverlayProps {
-  isVisible: boolean;
+  isVisible: Signal<boolean>;
   onClick: () => void;
 }
 
 export default function Overlay({ isVisible, onClick }: OverlayProps) {
-  if (!isVisible) return null;
+  if (!isVisible.value) return null;
 
   return (
     <div

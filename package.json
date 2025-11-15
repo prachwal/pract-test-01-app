@@ -17,6 +17,7 @@
     "postcss:browsers": "echo 'Checking browser support...' && npx autoprefixer --info | head -5"
   },
   "dependencies": {
+    "@preact/signals": "^2.5.0",
     "preact": "^10.27.2"
   },
   "devDependencies": {

@@ -1,22 +1,24 @@
-import { useState, useEffect } from 'preact/hooks';
+import { signal, effect } from '@preact/signals';
+
+const getInitialTheme = () => {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('theme') ||
+           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+  return 'dark';
+};
+
+const themeSignal = signal(getInitialTheme());
+
+effect(() => {
+  document.documentElement.setAttribute('data-theme', themeSignal.value);
+  localStorage.setItem('theme', themeSignal.value);
+});
 
 export function useTheme() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') ||
-             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    }
-    return 'dark';
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
   const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+    themeSignal.value = themeSignal.value === 'dark' ? 'light' : 'dark';
   };
 
-  return { theme, toggleTheme };
+  return { theme: themeSignal, toggleTheme };
 }

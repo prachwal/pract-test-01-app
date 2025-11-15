@@ -1,12 +1,14 @@
+import { Signal } from '@preact/signals';
+
 interface SidebarProps {
-  isOpen: boolean;
+  isOpen: Signal<boolean>;
   onClose: () => void;
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <aside
-      className={`sidebar bg-surface border shadow-xl ${isOpen ? 'sidebar--open' : ''}`}
+      className={`sidebar bg-surface border shadow-xl ${isOpen.value ? 'sidebar--open' : ''}`}
     >
       {/* Sidebar Header */}
       <div className="sidebarHeader">

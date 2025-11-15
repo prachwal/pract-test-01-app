@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'preact/hooks';
+import { signal, effect } from '@preact/signals';
+
+const isOpenSignal = signal(false);
+
+effect(() => {
+  if (isOpenSignal.value) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+  return () => {
+    document.body.style.overflow = '';
+  };
+});
 
 export function useSidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const openSidebar = () => isOpenSignal.value = true;
+  const closeSidebar = () => isOpenSignal.value = false;
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
-  const openSidebar = () => setIsOpen(true);
-  const closeSidebar = () => setIsOpen(false);
-
-  return { isOpen, openSidebar, closeSidebar };
+  return { isOpen: isOpenSignal, openSidebar, closeSidebar };
 }
