@@ -1,3 +1,4 @@
+import { memo } from 'preact/compat';
 import CounterCard from './CounterCard';
 import LogoSection from './LogoSection';
 
@@ -6,7 +7,7 @@ interface HeroSectionProps {
   onIncrement: () => void;
 }
 
-export default function HeroSection({ count, onIncrement }: HeroSectionProps) {
+function HeroSection({ count, onIncrement }: HeroSectionProps) {
   return (
     <section id="home" className="container py-5 heroSection">
       {/* Logos */}
@@ -25,3 +26,5 @@ export default function HeroSection({ count, onIncrement }: HeroSectionProps) {
     </section>
   );
 }
+
+export default memo(HeroSection);

@@ -1,11 +1,33 @@
 import { Signal } from '@preact/signals';
 
+declare const __APP_VERSION__: string;
+
 interface SidebarProps {
   isOpen: Signal<boolean>;
   onClose: () => void;
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const navigationItems = [
+    { href: '#home', icon: '🏠', text: 'Home' },
+    { href: '#features', icon: '⚡', text: 'Features' },
+    { href: '#counter', icon: '🔢', text: 'Counter' },
+    { 
+      href: 'https://vitejs.dev', 
+      icon: '📚', 
+      text: 'Vite Docs',
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    },
+    { 
+      href: 'https://preactjs.com', 
+      icon: '⚛️', 
+      text: 'Preact Docs',
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    },
+  ];
+
   return (
     <aside
       className={`sidebar bg-surface border shadow-xl ${isOpen.value ? 'sidebar--open' : ''}`}
@@ -30,65 +52,21 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       {/* Sidebar Navigation */}
       <nav className="navigation">
         <ul className="navList">
-          <li className="navItem">
-            <a
-              href="#home"
-              className="navLink"
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--color-bg)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-            >
-              <span className="navIcon">🏠</span>
-              <span className="font-semibold">Home</span>
-            </a>
-          </li>
-          <li className="navItem">
-            <a
-              href="#features"
-              className="navLink"
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--color-bg)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-            >
-              <span className="navIcon">⚡</span>
-              <span className="font-semibold">Features</span>
-            </a>
-          </li>
-          <li className="navItem">
-            <a
-              href="#counter"
-              className="navLink"
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--color-bg)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-            >
-              <span className="navIcon">🔢</span>
-              <span className="font-semibold">Counter</span>
-            </a>
-          </li>
-          <li className="navItem">
-            <a
-              href="https://vitejs.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="navLink"
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--color-bg)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-            >
-              <span className="navIcon">📚</span>
-              <span className="font-semibold">Vite Docs</span>
-            </a>
-          </li>
-          <li className="navItem">
-            <a
-              href="https://preactjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="navLink"
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--color-bg)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-            >
-              <span className="navIcon">⚛️</span>
-              <span className="font-semibold">Preact Docs</span>
-            </a>
-          </li>
+          {navigationItems.map((item, index) => (
+            <li key={index} className="navItem">
+              <a
+                href={item.href}
+                target={item.target}
+                rel={item.rel}
+                className="navLink"
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--color-bg)'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              >
+                <span className="navIcon">{item.icon}</span>
+                <span className="font-semibold">{item.text}</span>
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
@@ -96,7 +74,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       <div className="sidebarFooter">
         <p className="text-muted text-sm m-0 text-center">
           Vite + Preact Stack<br/>
-          <span className="text-xs">v1.0.0</span>
+          <span className="text-xs">v{__APP_VERSION__}</span>
         </p>
       </div>
     </aside>

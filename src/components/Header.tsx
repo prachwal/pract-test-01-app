@@ -1,4 +1,7 @@
+import { memo } from 'preact/compat';
 import { Signal } from '@preact/signals';
+import ThemeButton from './ThemeButton';
+import HamburgerButton from './HamburgerButton';
 
 interface HeaderProps {
   theme: Signal<string>;
@@ -7,18 +10,22 @@ interface HeaderProps {
   children?: preact.ComponentChildren;
 }
 
-export default function Header({ theme, onToggleSidebar, onToggleTheme, children }: HeaderProps) {
+function Header({ theme, onToggleSidebar, onToggleTheme, children }: HeaderProps) {
   return (
     <header className="header bg-surface border">
       {/* Hamburger Button */}
-      <button
-        className="button button--ghost hamburger"
-        onClick={onToggleSidebar}
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
+      <HamburgerButton onToggleSidebar={onToggleSidebar} />
 
+      <TitleAndLogo />
+
+      <ThemeButton onClick={onToggleTheme} theme={theme} />
+      {children}
+    </header>
+  );
+}
+
+const TitleAndLogo = memo(() =>  {  
+  return (
       <div className="logoContainer">
         <div className="logo">
           VP
@@ -33,14 +40,7 @@ export default function Header({ theme, onToggleSidebar, onToggleTheme, children
           </p>
         </div>
       </div>
-
-      <button
-        className="button button--outline themeToggle"
-        onClick={onToggleTheme}
-      >
-        {theme.value === 'dark' ? '☀️' : '🌙'}
-      </button>
-      {children}
-    </header>
   );
-}
+});
+
+export default memo(Header);

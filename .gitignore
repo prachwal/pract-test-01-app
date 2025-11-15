@@ -23,3 +23,15 @@ tmp/
 *.njsproj
 *.sln
 *.sw?
+
+# Generated / runtime folders
+build/
+dist/
+dist-ssr/
+tests/screenshots/
+tests/artifacts/
+.cache/
+.playwright/
+playwright-report/
+node_modules/
+.env

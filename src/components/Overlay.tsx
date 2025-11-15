@@ -1,11 +1,12 @@
 import { Signal } from '@preact/signals';
+import { memo } from 'preact/compat';
 
 interface OverlayProps {
   isVisible: Signal<boolean>;
   onClick: () => void;
 }
 
-export default function Overlay({ isVisible, onClick }: OverlayProps) {
+function Overlay({ isVisible, onClick }: OverlayProps) {
   if (!isVisible.value) return null;
 
   return (
@@ -25,3 +26,5 @@ export default function Overlay({ isVisible, onClick }: OverlayProps) {
     />
   );
 }
+
+export default memo(Overlay);

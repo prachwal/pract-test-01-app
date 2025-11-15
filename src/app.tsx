@@ -1,12 +1,12 @@
 import { useState } from "preact/hooks";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Overlay from "./components/Overlay";
-import HeroSection from "./components/HeroSection";
-import FeaturesGrid from "./components/FeaturesGrid";
-import Footer from "./components/Footer";
-import { useTheme } from "./hooks/useTheme";
-import { useSidebar } from "./hooks/useSidebar";
+import Header from "@components/Header";
+import Sidebar from "@components/Sidebar";
+import Overlay from "@components/Overlay";
+import HeroSection from "@components/HeroSection";
+import FeaturesGrid from "@components/FeaturesGrid";
+import Footer from "@components/Footer";
+import { useTheme } from "@components/ThemeProvider";
+import { useSidebar } from "@hooks/useSidebar";
 
 export default function App() {
   const [count, setCount] = useState(0);
