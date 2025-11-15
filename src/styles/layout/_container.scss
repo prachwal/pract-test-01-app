@@ -1,18 +1,54 @@
-// Container helpers
+// Container helpers - Mobile-First Design
+// Base styles: Mobile (< 768px)
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   width: 100%;
 }
 
 .containerPadded {
-  padding-left: var(--spacing-lg);
-  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
 .container-fluid {
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+// Tablet and up (768px+)
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .containerPadded {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// Desktop (1024px+)
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .containerPadded {
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+
+  .container-fluid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }

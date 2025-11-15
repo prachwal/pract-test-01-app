@@ -1,19 +1,23 @@
+// FeaturesGrid component - Mobile-First Design
+// Base styles: Mobile (< 768px)
+
 .featuresSection {
-  // Container styles handled by global .container
+  padding: 2rem 0;
 }
 
 .sectionTitle {
-  // Uses global heading, text-center, mb-5, text-3xl classes
+  font-size: var(--font-size-xl);
+  margin-bottom: 1.5rem;
 }
 
 .gridContainer {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .gridRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 
@@ -23,17 +27,71 @@
 }
 
 .featureCard {
-  min-height: 160px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
 }
 
 .featureIcon {
-  // Uses global text-4xl, mb-3 classes
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .featureTitle {
-  // Uses global card__title, text-xl, font-bold classes
+  font-size: var(--font-size-lg);
+  margin-bottom: 0.5rem;
 }
 
 .featureDescription {
-  // Uses global card__body, text-muted, m-0 classes
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+// Small tablets (640px+)
+@media (min-width: 640px) {
+  .gridRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featureCard {
+    min-height: 150px;
+  }
+}
+
+// Tablets (768px+)
+@media (min-width: 768px) {
+  .featuresSection {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 2rem;
+  }
+
+  .gridContainer {
+    max-width: 1100px;
+  }
+
+  .gridRow {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    min-height: 160px;
+  }
+
+  .featureIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .featureTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .featureDescription {
+    font-size: var(--font-size-base);
+  }
 }

@@ -6,14 +6,25 @@ $spacing-sm: 8px;
 $spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
+$spacing-2xl: 48px;
 
 // Sizes
 $max-width: 1280px;
 
 // Typography
+$font-size-xs: 12px;
+$font-size-sm: 14px;
 $font-size-base: 16px;
 $font-size-lg: 18px;
+$font-size-xl: 24px;
 $font-size-2xl: 32px;
+$font-size-3xl: 48px;
+
+// Responsive Breakpoints (Mobile-First)
+$breakpoint-sm: 640px;   // Small tablets
+$breakpoint-md: 768px;   // Tablets
+$breakpoint-lg: 1024px;  // Desktop
+$breakpoint-xl: 1280px;  // Large desktop
 
 // Export CSS variables for runtime theming
 :root {
@@ -22,10 +33,20 @@ $font-size-2xl: 32px;
   --spacing-md: #{$spacing-md};
   --spacing-lg: #{$spacing-lg};
   --spacing-xl: #{$spacing-xl};
+  --spacing-2xl: #{$spacing-2xl};
 
   --max-width: #{$max-width};
 
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
   --font-size-base: #{$font-size-base};
   --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
   --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
 }

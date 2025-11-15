@@ -1,51 +1,109 @@
+// HeroSection component - Mobile-First Design
+// Base styles: Mobile (< 768px)
+
 .heroSection {
-  // Container styles are handled by global .container
+  padding: 2rem 0;
 }
 
 .logos {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .logoLink {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: var(--color-bg-1);
-  border-radius: 20px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--color-border);
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .title {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 .description {
-  max-width: 700px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
   line-height: 1.6;
+  font-size: var(--font-size-base);
 }
 
 .counterContainer {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .counterDisplay {
   margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .incrementButton {
   width: 100%;
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
 }
 
 .editNote {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+// Tablet and up (768px+)
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 3rem 0;
+  }
+
+  .logos {
+    margin-bottom: 3rem;
+  }
+
+  .logoLink {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    max-width: 700px;
+    margin-bottom: 3rem;
+    font-size: var(--font-size-lg);
+  }
+
+  .counterContainer {
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .counterDisplay {
+    font-size: 2.5rem;
+  }
+
+  .incrementButton {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .editNote {
+    font-size: var(--font-size-base);
+  }
 }

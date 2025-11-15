@@ -1,22 +1,21 @@
-// Buttons styles - semantic and accessible
-// All interactive elements should have consistent styling and proper states
-
-// =====================================
-// Button Base Styles
-// =====================================
+// Buttons styles - Mobile-First Design
+// Base styles: Mobile (< 768px)
 
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 0.875rem;
   border-radius: 8px;
   border: 1px solid transparent;
   background: var(--color-primary);
   color: #fff;
   font-weight: 600;
+  font-size: var(--font-size-sm);
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  text-align: center;
   
   // Button states
   &:hover {
@@ -43,11 +42,7 @@
   }
 }
 
-// =====================================
-// Button Variants
-// =====================================
-
-// Outline variant - border only
+// Button variants
 .button--outline {
   background: transparent;
   color: var(--color-primary);
@@ -66,7 +61,6 @@
   }
 }
 
-// Ghost variant - enhanced with border hover
 .button--ghost {
   background: transparent;
   color: var(--color-primary);
@@ -90,9 +84,8 @@
   }
 }
 
-// Danger variant - for destructive actions
 .button--danger {
-  background: #dc2626; // Semantic red
+  background: #dc2626;
   
   &:hover {
     background: #b91c1c;
@@ -101,5 +94,20 @@
   &:disabled,
   &[aria-disabled="true"] {
     background: var(--color-muted);
+  }
+}
+
+// Tablet and up (768px+)
+@media (min-width: 768px) {
+  .button {
+    padding: 0.6rem 1rem;
+    font-size: var(--font-size-base);
+  }
+}
+
+// Desktop (1024px+)
+@media (min-width: 1024px) {
+  .button {
+    padding: 0.75rem 1.25rem;
   }
 }

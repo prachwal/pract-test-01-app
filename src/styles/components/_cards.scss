@@ -1,35 +1,25 @@
-// Card components - flexible container elements
-// Interactive cards support hover effects and visual feedback
-
-// =====================================
-// Card Base Styles
-// =====================================
+// Card components - Mobile-First Design
+// Base styles: Mobile (< 768px)
 
 .card {
   background: var(--color-bg-1, #fff);
   border-radius: 12px;
-  padding: var(--spacing-lg, 24px);
+  padding: var(--spacing-md, 16px);
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   border: 1px solid var(--color-border, rgba(0,0,0,0.06));
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-// =====================================
-// Card Modifiers
-// =====================================
-
-// Enhanced padding variant
+// Card modifiers
 .card--padded {
-  padding: calc(var(--spacing-lg, 24px) * 1.25);
+  padding: var(--spacing-lg, 24px);
 }
 
-// Elevated effect with subtle shadow
 .card--elevated {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transform: translateY(-2px);
 }
 
-// Interactive variant with enhanced hover effects
 .card--interactive {
   cursor: pointer;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -49,17 +39,40 @@
   }
 }
 
-// =====================================
-// Card Sub-components
-// =====================================
-
+// Card sub-components
 .card__title {
   margin: 0 0 0.5rem 0;
   font-weight: 700;
   color: var(--color-text);
+  font-size: var(--font-size-base);
 }
 
 .card__body {
   color: var(--color-text);
-  font-size: var(--font-size-base, 16px);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+// Tablet and up (768px+)
+@media (min-width: 768px) {
+  .card {
+    padding: var(--spacing-lg, 24px);
+    border-radius: 16px;
+  }
+
+  .card--padded {
+    padding: calc(var(--spacing-lg, 24px) * 1.25);
+  }
+
+  .card--elevated {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+
+  .card__title {
+    font-size: var(--font-size-lg);
+  }
+
+  .card__body {
+    font-size: var(--font-size-base);
+  }
 }
