@@ -22,7 +22,8 @@ export default function Header({ theme, onToggleSidebar, onToggleTheme }: Header
         </div>
         <div className="titleContainer">
           <h1 className="heading m-0 text-xl title">
-            Vite + Preact
+            <span className="md:inline hidden">Vite + Preact</span>
+            {/* Usuwamy VP z tekstu na mobile */}
           </h1>
           <p className="text-muted m-0 text-sm subtitle">
             Modern Development Stack

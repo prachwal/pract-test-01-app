@@ -6,8 +6,7 @@ interface SidebarProps {
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <aside
-      className="sidebar bg-surface border shadow-xl"
-      style={{ left: isOpen ? 0 : '-280px' }}
+      className={`sidebar bg-surface border shadow-xl ${isOpen ? 'sidebar--open' : ''}`}
     >
       {/* Sidebar Header */}
       <div className="sidebarHeader">

@@ -3,11 +3,24 @@
   top: 0;
   bottom: 0;
   width: 280px;
+  left: -280px;
   z-index: 999;
   transition: left 0.3s ease;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+    left: -240px;
+  }
+}
+
+.sidebar--open {
+  left: 0 !important;
 }
 
 .sidebarHeader {

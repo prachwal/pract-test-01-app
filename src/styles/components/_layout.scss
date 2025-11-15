@@ -24,6 +24,6 @@
 
 // Small responsive helpers
 @media (max-width: 640px) {
-  .header { flex-direction: column; align-items: stretch; }
+  /* Header styles moved to _header.scss */
   .nav { justify-content: center; flex-wrap: wrap; }
 }
